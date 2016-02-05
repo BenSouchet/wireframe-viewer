@@ -25,9 +25,6 @@ static int	ft_execute(int ac, char **av)
 
 int			main(int ac, char **av)
 {
-	int i;
-
-	i = 0;
 	if (ac < 2)
 		write(1, "usage: ./fdf input_file\n       ./fdf ... input_file\n", 52);
 	else
