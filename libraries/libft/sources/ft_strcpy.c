@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.h                                              :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsouchet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/04 18:39:26 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/02/17 18:36:28 by bsouchet         ###   ########.fr       */
+/*   Created: 2016/02/02 19:11:33 by bsouchet          #+#    #+#             */
+/*   Updated: 2016/02/02 19:11:38 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FDF_H
-# define FDF_H
+#include "libft.h"
 
-# include <fcntl.h>
-# include "../libraries/libft/include/libft.h"
+char	*ft_strcpy(char *dst, const char *src)
+{
+	size_t	n;
 
-#endif
+	n = 0;
+	while (src[n])
+	{
+		dst[n] = src[n];
+		n++;
+	}
+	dst[n] = '\0';
+	return (dst);
+}

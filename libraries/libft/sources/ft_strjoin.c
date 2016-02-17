@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.h                                              :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsouchet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/04 18:39:26 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/02/17 18:36:28 by bsouchet         ###   ########.fr       */
+/*   Created: 2016/02/02 18:58:04 by bsouchet          #+#    #+#             */
+/*   Updated: 2016/02/02 18:58:18 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FDF_H
-# define FDF_H
+#include "libft.h"
 
-# include <fcntl.h>
-# include "../libraries/libft/include/libft.h"
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	char	*s;
 
-#endif
+	if ((s = ft_strnew((size_t)ft_strlen(s1) + ft_strlen(s2))) == NULL)
+		return (s);
+	ft_strcpy(s, s1);
+	ft_strcat(s, s2);
+	return (s);
+}

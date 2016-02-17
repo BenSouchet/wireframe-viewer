@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.h                                              :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/04 18:39:26 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/02/17 18:36:28 by bsouchet         ###   ########.fr       */
+/*   Created: 2015/12/08 11:20:20 by bsouchet          #+#    #+#             */
+/*   Updated: 2015/12/14 16:28:13 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FDF_H
-# define FDF_H
-
-# include <fcntl.h>
-# include "../libraries/libft/include/libft.h"
-
-#endif
+int		ft_abs(int n)
+{
+	if (n < 0 || (1.0 / n) < 0)
+		n *= -1;
+	return (n);
+}
