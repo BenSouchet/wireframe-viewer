@@ -6,7 +6,7 @@
 /*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/02 13:30:40 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/02/17 18:53:42 by bsouchet         ###   ########.fr       */
+/*   Updated: 2016/02/18 18:24:28 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@
 # define MSG05 ")\t --> Invalid character"
 # define MSG06 "\t\t\t --> No data in the input file "
 # define MSG07 ")\t --> A sign must be followed only by digit(s)"
-# define MSG08 ")\t --> Invalid Hexadecimal color"
+# define MSG08 ")\t --> Invalid Hexadecimal color code"
+# define MSG09 "\t\t\t --> Lines aren't of the same length"
 
 # define BUFF_SIZE 1
 
@@ -36,6 +37,8 @@ typedef struct	s_data
 	char		*c;
 	int			l;
 	int			x;
+	int			len;
+	int			invalid;
 }				t_data;
 
 int				ft_abs(int n);
