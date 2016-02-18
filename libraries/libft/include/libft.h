@@ -6,7 +6,7 @@
 /*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/02 13:30:40 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/02/18 18:24:28 by bsouchet         ###   ########.fr       */
+/*   Updated: 2016/02/18 19:00:57 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ char			*ft_strnew(size_t size);
 char			*ft_strcat(char *s1, const char *s2);
 char			*ft_strcpy(char *dst, const char *src);
 char			*ft_strjoin(char const *s1, char const *s2);
+
+int				ft_strcmp(char *s1, char *s2);
 
 int				ft_pr(t_data s, int type);
 int				get_next_line(int const fd, char **line, t_data s);

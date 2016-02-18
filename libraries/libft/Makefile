@@ -6,7 +6,7 @@
 #    By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/02/02 15:48:09 by bsouchet          #+#    #+#              #
-#    Updated: 2016/02/17 18:14:07 by bsouchet         ###   ########.fr        #
+#    Updated: 2016/02/18 19:00:20 by bsouchet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,7 @@ SOURCES = ft_abs.c \
 		  ft_strlen.c \
 		  ft_strnew.c \
 		  ft_strjoin.c \
+		  ft_strcmp.c \
 		  ft_memalloc.c \
 		  get_next_line.c
 
