@@ -6,7 +6,7 @@
 /*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/04 18:21:25 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/02/18 19:22:36 by bsouchet         ###   ########.fr       */
+/*   Updated: 2016/02/19 15:39:53 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,21 @@
 
 static int		ft_check_hex(char *s, int x, int *e, t_data d)
 {
+	int letter;
 	int num;
+	int i;
 
+	i = 0;
 	num = 0;
+	letter = -1;
 	while (x++ > -1 && num++ > -1 && s[x] != 32 && s[x] != 0)
 		if ((s[x] < 48 || s[x] > 57) && (s[x] < 65 || s[x] > 70) && (*e)++ == 0)
 			ft_pr(d, 6);
-	if (num != 7 && *e == 0)
+		else if ((letter == -1 || s[x] == letter) && i++ > -1)
+			letter = s[x];
+		else if (s[x] != letter)
+			i = 0;
+	if (((num == 4 && i != 3) || (num != 4 && num != 7)) && *e == 0)
 		ft_pr(d, 6);
 	return (1);
 }
@@ -55,6 +63,7 @@ static t_data	ft_check_number(t_data s, int e)
 static t_data	ft_lcheck(t_data s, int num)
 {
 	s.l++;
+	s.x = 0;
 	while (s.c[s.x] != 0)
 	{
 		while (s.c[s.x] == 32)
