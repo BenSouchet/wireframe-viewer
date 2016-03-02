@@ -6,7 +6,7 @@
 /*   By: bsouchet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/17 18:01:27 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/02/18 18:25:28 by bsouchet         ###   ########.fr       */
+/*   Updated: 2016/03/02 17:55:59 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ static void	ft_pr2(t_data s, int type)
 	}
 	else if (type == 8)
 		ft_putstr_fd(ft_strjoin(ft_strjoin(MSG03, s.file), MSG09), 2);
+	else if (type == 9)
+		ft_putstr_fd(ft_strjoin(ft_strjoin(MSG03, s.file), MSG10), 2);
 }
 
 int			ft_pr(t_data s, int type)

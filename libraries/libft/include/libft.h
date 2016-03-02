@@ -6,7 +6,7 @@
 /*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/02 13:30:40 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/02/18 19:00:57 by bsouchet         ###   ########.fr       */
+/*   Updated: 2016/03/02 17:57:16 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 # define MSG07 ")\t --> A sign must be followed only by digit(s)"
 # define MSG08 ")\t --> Invalid Hexadecimal color code"
 # define MSG09 "\t\t\t --> Lines aren't of the same length"
+# define MSG10 "\t\t\t --> Memory allocation failure"
 
 # define BUFF_SIZE 1
 
@@ -35,9 +36,11 @@ typedef struct	s_data
 	char		**files;
 	char		*file;
 	char		*c;
+	char		*s;
 	int			l;
 	int			x;
 	int			len;
+	int			**tab;
 	int			invalid;
 }				t_data;
 
