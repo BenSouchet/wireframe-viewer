@@ -6,7 +6,7 @@
 /*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/02 13:30:40 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/03/02 17:57:16 by bsouchet         ###   ########.fr       */
+/*   Updated: 2016/03/04 18:01:09 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ void			ft_putnbr_fd(int n, int fd);
 void			ft_putstr_fd(char const *s, int fd);
 
 size_t			ft_strlen(const char *s);
+char			*ft_itoa(int n);
 char			*ft_strnew(size_t size);
 char			*ft_strcat(char *s1, const char *s2);
 char			*ft_strcpy(char *dst, const char *src);

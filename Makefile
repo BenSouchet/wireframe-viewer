@@ -6,7 +6,7 @@
 #    By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/02/04 18:49:05 by bsouchet          #+#    #+#              #
-#    Updated: 2016/02/17 17:47:57 by bsouchet         ###   ########.fr        #
+#    Updated: 2016/03/04 14:43:14 by bsouchet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ all: temporary $(NAME)
 
 $(NAME): $(OBJS)
 	@make -C $(DIR_LIB)/$(LIBFT)
-	@$(CC) $(FLAGS) -L $(DIR_LIB)/$(LIBFT) -lft -o $@ $^
+	@$(CC) $(FLAGS) -L $(DIR_LIB)/$(LIBFT) -lft -o $@ $^ -lmlx -framework OpenGL -framework AppKit
 
 temporary:
 	@mkdir -p temporary

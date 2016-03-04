@@ -6,12 +6,11 @@
 /*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/04 18:21:25 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/03/04 18:57:06 by bsouchet         ###   ########.fr       */
+/*   Updated: 2016/03/04 16:17:47 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
-#include <stdlib.h>
 
 static int		ft_check_hex(char *s, int x, int *e, t_data d)
 {
@@ -114,56 +113,6 @@ static int		**ft_convert(t_data s, int i, int x, int y)
 	}
 	return (s.tab);
 }
-
-int			ft_expose_hook(t_var *v)
-{
-	int		x;
-	int		y;
-
-	y = 0;
-	while (y < 720)
-	{
-		x = 0;
-		while (x < 1280)
-			mlx_pixel_put(v->mlx, v->win, x++, y, 0x353535);
-		y++;
-	}
-	x = 25;
-	y = 25;
-	while (x <= 188)
-		mlx_pixel_put(v->mlx, v->win, x++, y, 0x84AC00);
-	while (y <= 105)
-		mlx_pixel_put(v->mlx, v->win, x, y++, 0x84AC00);
-	while (x >= 25)
-		mlx_pixel_put(v->mlx, v->win, x--, y, 0x84AC00);
-	while (y >= 25)
-		mlx_pixel_put(v->mlx, v->win, x, y--, 0x84AC00);
-	mlx_string_put(v->mlx, v->win, 37, 35, 0x84AC00, "Quit = ESC");
-	mlx_string_put(v->mlx, v->win, 37, 55, 0x84AC00, "Move = ^ v < >");
-	mlx_string_put(v->mlx, v->win, 37, 75, 0x84AC00, "Zoom = + -");
-	y = 655;
-	while (x <= 188)
-		mlx_pixel_put(v->mlx, v->win, x++, y, 0x84AC00);
-	while (y <= 695)
-		mlx_pixel_put(v->mlx, v->win, x, y++, 0x84AC00);
-	while (x >= 25)
-		mlx_pixel_put(v->mlx, v->win, x--, y, 0x84AC00);
-	while (y >= 655)
-		mlx_pixel_put(v->mlx, v->win, x, y--, 0x84AC00);
-	mlx_string_put(v->mlx, v->win, 37, 665, 0x84AC00, v->nbr);
-	x = v->len - 1;
-	while (x <= 1255)
-		mlx_pixel_put(v->mlx, v->win, x++, y, 0x84AC00);
-	while (y <= 695)
-		mlx_pixel_put(v->mlx, v->win, x, y++, 0x84AC00);
-	while (x >= v->len)
-		mlx_pixel_put(v->mlx, v->win, x--, y, 0x84AC00);
-	while (y >= 655)
-		mlx_pixel_put(v->mlx, v->win, x, y--, 0x84AC00);
-	mlx_string_put(v->mlx, v->win, v->len + 11, 665, 0x84AC00, v->nam);
-	return (0);
-}
-
 int				ft_key_hook(int keycode, t_var *v)
 {
 	if (keycode == 53)
@@ -173,18 +122,19 @@ int				ft_key_hook(int keycode, t_var *v)
 	}
 	return (0);
 }
-
 static int		ft_draw(t_data s)
 {
 	t_var v;
 
-	v.nam = ft_strjoin("File : ", s.file);
-	v.nbr = ft_strjoin("Edges : ", ft_itoa((((s.l - 1) * s.len) * 2)));
-	v.len = 1230 - (ft_strlen(ft_strjoin("File : ", s.file)) * 10);
+	v.i = 0;
 	v.mlx = mlx_init();
-	v.win = mlx_new_window(v.mlx, 1280, 720, ft_strjoin("fdf : ", s.file));
-	mlx_expose_hook(v.win, &ft_expose_hook, &v);
-	mlx_key_hook(v.win, &ft_key_hook, &v);
+	while (v.i < 3)
+	{
+		s.file = s.files[v.i];
+		v.win = mlx_new_window(v.mlx, 1600, 900, ft_strjoin("fdf : ", s.file));
+		mlx_key_hook(v.win, &ft_key_hook, &v);
+		v.i++;
+	}
 	mlx_loop(v.mlx);
 	return (0);
 }
