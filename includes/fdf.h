@@ -6,7 +6,7 @@
 /*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/04 18:39:26 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/03/04 18:22:46 by bsouchet         ###   ########.fr       */
+/*   Updated: 2016/03/10 11:10:50 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,9 @@
 # include <fcntl.h>
 # include "../libraries/libft/include/libft.h"
 
-typedef struct	s_var
-{
-	void		*mlx;
-	void		*win;
-	char		*nbr;
-	char		*nam;
-	int			len;
-	int			i;
-}				t_var;
+# define BG_COLOR 0x353535
+# define UI_COLOR 0x84AC00
+# define WIN_W 1280
+# define WIN_H 720
 
 #endif

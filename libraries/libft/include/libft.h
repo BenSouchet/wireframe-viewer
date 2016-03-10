@@ -6,7 +6,7 @@
 /*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/02 13:30:40 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/03/04 18:01:09 by bsouchet         ###   ########.fr       */
+/*   Updated: 2016/03/10 14:27:02 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,28 @@
 
 # define BUFF_SIZE 1
 
-typedef struct	s_data
+typedef struct	s_var
 {
-	char		**files;
-	char		*file;
-	char		*c;
-	char		*s;
-	int			l;
-	int			x;
-	int			len;
-	int			**tab;
-	int			invalid;
-}				t_data;
+	void		*mlx;   //mlx
+	void		*win;   //window
+	int			***tab; //tab
+	char		**fls;  //files
+	int			**val;  //values width & lines
+	int			nbr;    //number
+	char		*fln;   //filename
+	char		*nam;   //name
+	int			max;    //maximum
+	int			inv;    //invalid
+	int			wth;    //width
+	char		*lgr;   //large
+	int			lns;    //lines
+	int			len;    //lenght
+	int			p;      //f position
+	int			x;      //x position
+	int			y;      //y position
+	char		*s;     //string
+	char		*c;     //content
+}				t_var;
 
 int				ft_abs(int n);
 
@@ -63,7 +73,7 @@ char			*ft_strjoin(char const *s1, char const *s2);
 
 int				ft_strcmp(char *s1, char *s2);
 
-int				ft_pr(t_data s, int type);
-int				get_next_line(int const fd, char **line, t_data s);
+int				ft_pr(t_var v, int type);
+int				get_next_line(int const fd, char **line, t_var v);
 
 #endif
