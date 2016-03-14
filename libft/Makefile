@@ -5,29 +5,40 @@
 #                                                     +:+ +:+         +:+      #
 #    By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2016/02/04 18:49:05 by bsouchet          #+#    #+#              #
-#    Updated: 2016/03/14 12:47:32 by bsouchet         ###   ########.fr        #
+#    Created: 2016/02/02 15:48:09 by bsouchet          #+#    #+#              #
+#    Updated: 2016/03/11 08:42:14 by bsouchet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 C = clang
 
-NAME = fdf
+NAME = libft.a
 
 FLAGS = -Wall -Wextra -Werror -O3
-
-LIBFT = libft
 
 DIR_S = sources
 
 DIR_O = temporary
 
-HEADERS = includes
+HEADER = include
 
-SOURCES = main.c \
-		  draw.c \
-		  hook.c \
-		  check.c
+SOURCES = ft_abs.c \
+		  ft_itoa.c \
+		  ft_atoi.c \
+		  ft_bzero.c \
+		  ft_strcat.c \
+		  ft_strcpy.c \
+		  ft_memset.c \
+		  ft_putchar_fd.c \
+		  ft_putnbr_fd.c \
+		  ft_putstr_fd.c \
+		  ft_perror_fd.c \
+		  ft_strlen.c \
+		  ft_strnew.c \
+		  ft_strjoin.c \
+		  ft_strcmp.c \
+		  ft_memalloc.c \
+		  get_next_line.c
 
 SRCS = $(addprefix $(DIR_S)/,$(SOURCES))
 
@@ -36,31 +47,25 @@ OBJS = $(addprefix $(DIR_O)/,$(SOURCES:.c=.o))
 all: temporary $(NAME)
 
 $(NAME): $(OBJS)
-	@make -C $(LIBFT)
-	@$(CC) $(FLAGS) -L $(LIBFT) -lft -o $@ $^ -lmlx -framework OpenGL -framework AppKit
+	@ar rc $(NAME) $(OBJS)
+	@ranlib $(NAME)
 
 temporary:
 	@mkdir -p temporary
 
-$(DIR_O)/%.o: $(DIR_S)/%.c $(HEADERS)/$(NAME).h
-	@$(CC) $(FLAGS) -I $(HEADERS) -c -o $@ $<
+$(DIR_O)/%.o: $(DIR_S)/%.c
+	@$(CC) $(FLAGS) -I $(HEADER) -o $@ -c $<
 
 norme:
-	@make norme -C $(LIBFT)
-	@echo
-	norminette $(HEADERS)
+	norminette $(HEADER)
 	@echo
 	norminette $(DIR_S)
 
 clean:
 	@rm -f $(OBJS)
-	@make clean -C $(LIBFT)
 	@rm -rf $(DIR_O)
 
 fclean: clean
 	@rm -f $(NAME)
-	@make fclean -C $(LIBFT)
 
 re: fclean all
-
-.PHONY: all, temporary, norme, clean, fclean, re
