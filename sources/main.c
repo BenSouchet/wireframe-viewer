@@ -6,7 +6,7 @@
 /*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/04 18:21:25 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/03/14 14:02:41 by bsouchet         ###   ########.fr       */
+/*   Updated: 2016/03/23 16:28:57 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,10 @@ static t_var	assign(t_var v, int type)
 	else if (type == 2 && (v.fls[v.p] = v.fln) != NULL)
 	{
 		v.tab[v.p] = convert(v, 0, 0, 0);
-		if (((WIN_W - 238) / v.wth) <= ((WIN_H - 116) / v.lns))
-			v.zom[v.p] = (WIN_W - 238) / v.wth;
+		if (((WIN_W - 263) / (v.wth - 1)) <= ((WIN_H - 116) / (v.lns - 1)))
+			v.zom[v.p] = (WIN_W - 263) / (v.wth - 1);
 		else
-			v.zom[v.p] = (WIN_H - 116) / v.lns;
-		printf("%i ----- %i\n",v.wth, v.zom[v.p]);
+			v.zom[v.p] = (WIN_H - 116) / (v.lns - 1);
 		v.val[v.p] = (int *)malloc(sizeof(int) * 2);
 		v.val[v.p][0] = v.lns;
 		v.val[v.p][1] = v.wth;
@@ -78,7 +77,7 @@ static int		execute(t_var v, int fd)
 		if (close(fd) == -1)
 			ft_pr(v, 3);
 	}
-	init_window(&v);
+	init_window(v);
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/02 13:30:40 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/03/11 09:16:03 by bsouchet         ###   ########.fr       */
+/*   Updated: 2016/03/24 14:47:25 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,18 @@
 
 # define BUFF_SIZE 1
 
+typedef struct	s_f
+{
+	void		*img;
+	int			bpp;
+	int			end;
+	int			sl;
+	char		*d;
+}				t_f;
+
 typedef struct	s_var
 {
+	void		*img;
 	void		*mlx;
 	void		*win;
 	char		**fls;
@@ -41,16 +51,21 @@ typedef struct	s_var
 	char		*nam;
 	char		*lgr;
 	char		*c;
+	char		*d;
 	char		*s;
 	int			***tab;
 	int			**val;
 	int			*zom;
+	int			add;
+	int			bpp;
+	int			end;
 	int			lns;
 	int			nbr;
 	int			wth;
 	int			max;
 	int			len;
 	int			inv;
+	int			sl;
 	int			p;
 	int			y;
 	int			x;

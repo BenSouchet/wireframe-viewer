@@ -6,7 +6,7 @@
 #    By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/02/04 18:49:05 by bsouchet          #+#    #+#              #
-#    Updated: 2016/03/14 12:47:32 by bsouchet         ###   ########.fr        #
+#    Updated: 2016/03/25 13:27:30 by bsouchet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,8 @@ LIBFT = libft
 DIR_S = sources
 
 DIR_O = temporary
+
+DIR_MLX = libmlx
 
 HEADERS = includes
 
@@ -37,7 +39,8 @@ all: temporary $(NAME)
 
 $(NAME): $(OBJS)
 	@make -C $(LIBFT)
-	@$(CC) $(FLAGS) -L $(LIBFT) -lft -o $@ $^ -lmlx -framework OpenGL -framework AppKit
+	@make -C $(DIR_MLX)
+	@$(CC) $(FLAGS) -L $(LIBFT) -lft -o $@ $^ -framework OpenGL -framework AppKit -L $(DIR_MLX) -lmlx
 
 temporary:
 	@mkdir -p temporary
@@ -55,11 +58,13 @@ norme:
 clean:
 	@rm -f $(OBJS)
 	@make clean -C $(LIBFT)
+	@make clean -C $(DIR_MLX)
 	@rm -rf $(DIR_O)
 
 fclean: clean
 	@rm -f $(NAME)
 	@make fclean -C $(LIBFT)
+	@make fclean -C $(DIR_MLX)
 
 re: fclean all
 
