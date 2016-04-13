@@ -6,7 +6,7 @@
 /*   By: bsouchet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/26 15:39:40 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/04/12 17:26:06 by bsouchet         ###   ########.fr       */
+/*   Updated: 2016/04/13 14:15:36 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int		face_color(t_var *v)
 	return (v->dlr[v->p]);
 }
 
-t_var	*rotate_point(t_var *v, int x, int y)
+t_var	*rotate_point(t_var *v, int x, int y, int p)
 {
 	int x_new;
 	int y_new;
@@ -61,10 +61,10 @@ t_var	*rotate_point(t_var *v, int x, int y)
 	(25 + ((WIN_H - 116) / 2));
 	v->tab[v->p][y][x][1] = (cos(v->rtx[v->p] * (PI / 180.0)) * (y_new - (25 +
 	((WIN_H - 116) / 2)))) - (sin(v->rtx[v->p] * (PI / 180.0)) *
-	(-(v->tab[v->p][y][x][2] * 15) - 0)) + (25 + ((WIN_H - 116) / 2));
+	(-(v->tab[v->p][y][x][2] * (p / 2)) - 0)) + (25 + ((WIN_H - 116) / 2));
 	z_new = (sin(v->rtx[v->p] * (PI / 180.0)) *
 	(y_new - (25 + ((WIN_H - 116) / 2)))) + (cos(v->rtx[v->p] * (PI / 180.0)) *
-	(-(v->tab[v->p][y][x][2] * 15) - 0));
+	(-(v->tab[v->p][y][x][2] * (p / 2)) - 0));
 	v->tab[v->p][y][x][0] = sin(v->rty[v->p] * (PI / 180.0)) *
 	(z_new) + cos(v->rty[v->p] * (PI / 180.0)) * (x_new - (213 + ((WIN_W - 213)
 	/ 2))) + (213 + ((WIN_W - 213) / 2));
@@ -84,7 +84,7 @@ t_var	*init_tab(t_var *v, int y, int x)
 		{
 			v->tab[v->p][y][x][0] = x_off + (x * v->zom[v->p]);
 			v->tab[v->p][y][x][1] = y_off + (y * v->zom[v->p]);
-			v = rotate_point(v, x, y);
+			v = rotate_point(v, x, y, v->zom[v->p]);
 			x++;
 		}
 		y++;
