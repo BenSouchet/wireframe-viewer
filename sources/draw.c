@@ -6,7 +6,7 @@
 /*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/11 08:59:37 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/05/02 17:09:56 by bsouchet         ###   ########.fr       */
+/*   Updated: 2016/05/02 19:46:12 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ void	user_interface_texts(t_var *v)
 	v = check_edges(v);
 	mlx_string_put(v->mlx, v->win, 41, 35, UI_COLOR, "Controls Keys");
 	mlx_string_put(v->mlx, v->win, 37, 63, UI_COLOR, "Quit = ESC");
-	mlx_string_put(v->mlx, v->win, 37, 83, UI_COLOR, "Colr = C");
+	mlx_string_put(v->mlx, v->win, 37, 83, UI_COLOR, "Color = C");
 	mlx_string_put(v->mlx, v->win, 37, 103, UI_COLOR, "Move = ^ v < >");
 	mlx_string_put(v->mlx, v->win, 37, 123, UI_COLOR, "Zoom = + or -");
 	mlx_string_put(v->mlx, v->win, 37, 143, UI_COLOR, "Rot8 = W S A D");
