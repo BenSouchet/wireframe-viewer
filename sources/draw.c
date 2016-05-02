@@ -6,7 +6,7 @@
 /*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/11 08:59:37 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/04/12 17:08:15 by bsouchet         ###   ########.fr       */
+/*   Updated: 2016/05/02 17:09:56 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,8 +91,7 @@ t_var	*user_interface(t_var *v, int type)
 void	user_interface_texts(t_var *v)
 {
 	v->nam = ft_strjoin("File : ", v->fls[v->p]);
-	v->lgr = ft_strjoin("Edges : ", ft_itoa((((v->val[v->p][0] - 1) *
-	v->val[v->p][1]) * 2)));
+	v = check_edges(v);
 	mlx_string_put(v->mlx, v->win, 41, 35, UI_COLOR, "Controls Keys");
 	mlx_string_put(v->mlx, v->win, 37, 63, UI_COLOR, "Quit = ESC");
 	mlx_string_put(v->mlx, v->win, 37, 83, UI_COLOR, "Colr = C");

@@ -6,7 +6,7 @@
 /*   By: bsouchet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/26 15:39:40 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/04/13 14:15:36 by bsouchet         ###   ########.fr       */
+/*   Updated: 2016/05/02 16:43:12 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,11 @@ t_var	*init_tab(t_var *v, int y, int x)
 
 t_var	*reset_tab(t_var *v)
 {
+	int lns;
+	int wth;
+
+	lns = (v->val[v->p][0] != 1) ? v->val[v->p][0] : 2;
+	wth = (v->val[v->p][1] != 1) ? v->val[v->p][1] : 2;
 	v = init_tab(v, 0, 0);
 	v->mov[v->p][1] = 0;
 	v->clr[v->p] = OBJ_COLOR;
@@ -102,10 +107,9 @@ t_var	*reset_tab(t_var *v)
 	v->rtx[v->p] = 0;
 	v->rty[v->p] = 0;
 	v->rtz[v->p] = 0;
-	if (((WIN_W - 263) / (v->val[v->p][1] - 1)) <=
-			((WIN_H - 116) / (v->val[v->p][0] - 1)))
-		v->zom[v->p] = (WIN_W - 263) / (v->val[v->p][1] - 1);
+	if (((WIN_W - 263) / (wth - 1)) <= ((WIN_H - 116) / (lns - 1)))
+		v->zom[v->p] = (WIN_W - 263) / (wth - 1);
 	else
-		v->zom[v->p] = (WIN_H - 116) / (v->val[v->p][0] - 1);
+		v->zom[v->p] = (WIN_H - 116) / (lns - 1);
 	return (v);
 }

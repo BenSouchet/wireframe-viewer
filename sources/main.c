@@ -6,7 +6,7 @@
 /*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/04 18:21:25 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/04/12 17:36:20 by bsouchet         ###   ########.fr       */
+/*   Updated: 2016/05/02 17:15:32 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,16 +48,20 @@ static t_var	assign(t_var v)
 	v.clr[v.p] = OBJ_COLOR;
 	v.dlr[v.p] = dark_color(v.clr[v.p], 0, 0, 0);
 	v.tab[v.p] = convert(v, 0, 0, 0);
-	if (((WIN_W - 263) / (v.wth - 1)) <= ((WIN_H - 116) / (v.lns - 1)))
-		v.zom[v.p] = (WIN_W - 263) / (v.wth - 1);
-	else
-		v.zom[v.p] = (WIN_H - 116) / (v.lns - 1);
 	v.mov[v.p] = (int *)malloc(sizeof(int) * 2);
 	v.val[v.p] = (int *)malloc(sizeof(int) * 2);
 	v.mov[v.p][0] = 0;
 	v.mov[v.p][1] = 0;
 	v.val[v.p][0] = v.lns;
 	v.val[v.p][1] = v.wth;
+	if (v.wth == 1)
+		v.wth++;
+	if (v.lns == 1)
+		v.lns++;
+	if (((WIN_W - 263) / (v.wth - 1)) <= ((WIN_H - 116) / (v.lns - 1)))
+		v.zom[v.p] = (WIN_W - 263) / (v.wth - 1);
+	else
+		v.zom[v.p] = (WIN_H - 116) / (v.lns - 1);
 	return (v);
 }
 

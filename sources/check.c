@@ -6,11 +6,27 @@
 /*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/11 08:44:40 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/03/11 08:47:18 by bsouchet         ###   ########.fr       */
+/*   Updated: 2016/05/02 17:15:07 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+
+t_var			*check_edges(t_var *v)
+{
+	int lns;
+	int wth;
+
+	lns = (v->val[v->p][0] != 1) ? v->val[v->p][0] : 2;
+	wth = v->val[v->p][1];
+	if (v->val[v->p][0] == 1 && v->val[v->p][1] == 1)
+		v->lgr = ft_strjoin("Edges : ", "Nope!");
+	else if (v->val[v->p][0] == 1 || v->val[v->p][1] == 1)
+		v->lgr = ft_strjoin("Edges : ", ft_itoa((lns - 1) * wth));
+	else
+		v->lgr = ft_strjoin("Edges : ", ft_itoa(((lns - 1) * wth) * 2));
+	return (v);
+}
 
 static int		check_hex(char *s, int x, int *e, t_var v)
 {
