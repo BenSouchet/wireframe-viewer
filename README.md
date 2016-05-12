@@ -1,6 +1,6 @@
 # Fdf
 
-Fdf is a program developped at 42 school to view topological maps in a 3D space.
+Fdf is a program developped for my learning course at 42 school to view topological maps in a 3D space.
 <img align="center" src="http://i.imgur.com/y2sxbI0.png" width="100%" />
 Several options are available (see [Keyboard shortcuts](https://github.com/Raiden-kazua/Fdf#keyboard-shortcuts) section for more infos) :
 * Zoom and unzoom
@@ -113,5 +113,33 @@ Open all maps of a folder ⇣
 </tbody>
 </table>
 *Only available if you lauched the program with more than one map.
+## Bad maps & errors
+
+This program have a very complexe errors checker, so if you launch Fdf with bad maps you will see the type, the line and the column position of all errors of the bad map.
+
+Example :
+
+Let's try with maps of the "maps/bad" subfolder ⇣
+```bash
+./fdf maps/bad/*
+```
+You will show this in your shell ⇣
+```bash
+error: maps/bad/01.fdf (line 4 col 37)    --> Invalid Hexadecimal color code
+error: maps/bad/02.fdf                    --> Lines aren't of the same length
+error: maps/bad/03.fdf                    --> Lines aren't of the same length
+error: maps/bad/04.fdf (line 5 col 18)    --> A sign must be followed only by digit(s)
+error: maps/bad/05.fdf (line 5 col 36)    --> A sign must be followed only by digit(s)
+error: maps/bad/06.fdf (line 4 col 38)    --> Invalid character
+error: maps/bad/07.fdf (line 4 col 23)    --> A sign must be followed only by digit(s)
+error: maps/bad/08.fdf (line 4 col 8)     --> Invalid character
+error: maps/bad/09.fdf (line 3 col 38)    --> Invalid character
+error: maps/bad/10.fdf                    --> No data in the input file
+error: maps/bad/11.fdf                    --> No data in the input file
+error: maps/bad/12.fdf                    --> No data in the input file
+error: maps/bad/13.fdf (line 2 col 38)    --> Invalid Hexadecimal color code
+error: maps/bad/14.fdf (line 2 col 38)    --> Invalid Hexadecimal color code
+error: maps/bad/15.fdf (line 4 col 3)     --> Invalid character
+```
 ## Contact & contribute
 If you want to contact me, or fix/improve Polygons, just send me a mail at **bsouchet@student.42.fr**
