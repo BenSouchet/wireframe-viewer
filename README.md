@@ -17,18 +17,19 @@ git clone https://github.com/Raiden-kazua/Fdf ~/Fdf
 cd ~/Fdf && ./fdf
 ```
 You have to launch the program with parameter(s). It's map(s) you would like to open at the execution of the program. Parameter(s) as to be the name(s) of valid filename(s).<br />
+
 Some Examples :<br />
 Open only one map ⇣
 ```bash
-./polygons maps/good/pyramide.fdf
+./fdf maps/good/pyramide.fdf
 ```
 Open several maps ⇣
 ```bash
-./polygons maps/good/pyramide.fdf maps/good/mars.fdf
+./fdf maps/good/pyramide.fdf maps/good/mars.fdf
 ```
 Open all maps of a folder ⇣
 ```bash
-./polygons maps/good/*
+./fdf maps/good/*
 ```
 ## Keyboard shortcuts
 
