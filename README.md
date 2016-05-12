@@ -2,7 +2,7 @@
 
 Fdf is a program developped at 42 school to view topological maps in a 3D space.
 <img align="center" src="http://i.imgur.com/y2sxbI0.png" width="100%" />
-Several options are available (see [Keyboard shortcuts](https://github.com/Raiden-kazua/Polygons/blob/master/README.md#keyboard-shortcuts) section for more infos) :
+Several options are available (see [Keyboard shortcuts](https://github.com/Raiden-kazua/Fdf#keyboard-shortcuts) section for more infos) :
 * Zoom and unzoom
 * Move the map on the 3D space
 * Rotate the map (on the three axes of rotation)
@@ -51,36 +51,32 @@ Open all maps of a folder ⇣
 <td valign="top" align="center"><kbd>&nbsp;esc&nbsp;</kbd></td>
 </tr>
 <tr>
-<td valign="top" height="30px">Reset all the changes made since the beginning</td>
+<td valign="top" height="30px">Reset all the changes made for this map</td>
 <td valign="top" align="center"><kbd>&nbsp;clear&nbsp;</kbd></td>
 </tr>
 <tr>
-<td valign="top" height="30px">Increase the global size of the polygon (aka zoom)</td>
+<td valign="top" height="30px">Increase the global size of the map (aka zoom)</td>
 <td valign="top" align="center"><kbd>&nbsp;+&nbsp;</kbd></td>
 </tr>
 <tr>
-<td valign="top" height="30px">Decrease the global size of the polygon (aka unzoom)</td>
+<td valign="top" height="30px">Decrease the global size of the map (aka unzoom)</td>
 <td valign="top" align="center"><kbd>&nbsp;-&nbsp;</kbd></td>
 </tr>
 <tr>
-<td valign="top" height="30px">Increase the height of the polygon (aka height stretch)</td>
+<td valign="top" height="30px">Move the map to the up (aka move up)</td>
 <td valign="top" align="center"><kbd>&nbsp;▲&nbsp;</kbd></td>
 </tr>
 <tr>
-<td valign="top" height="30px">Decrease the height of the polygon (aka height shrink)</td>
+<td valign="top" height="30px">Move the map to the down (aka move down)</td>
 <td valign="top" align="center"><kbd>&nbsp;▼&nbsp;</kbd></td>
 </tr>
 <tr>
-<td valign="top" height="30px">Increase the width of the polygon (aka width stretch)</td>
-<td valign="top" align="center"><kbd>&nbsp;►&nbsp;</kbd></td>
-</tr>
-<tr>
-<td valign="top" height="30px">Decrease the width of the polygon (aka width shrink)</td>
+<td valign="top" height="30px">Move the map to the left (aka width move left)</td>
 <td valign="top" align="center"><kbd>&nbsp;◄&nbsp;</kbd></td>
 </tr>
 <tr>
-<td valign="top" height="30px">Fill or unfill the polygon</td>
-<td valign="top" align="center"><kbd>&nbsp;shift&nbsp;</kbd></td>
+<td valign="top" height="30px">Move the map to the right (aka move right)</td>
+<td valign="top" align="center"><kbd>&nbsp;►&nbsp;</kbd></td>
 </tr>
 <tr>
 <td valign="top" height="30px">Increase the position of all odd points of the polygon</td>
@@ -107,15 +103,15 @@ Open all maps of a folder ⇣
 <td valign="top" align="center"><kbd>&nbsp;Z&nbsp;</kbd></td>
 </tr>
 <tr>
-<td valign="top" height="30px">Previous polygon</td>
+<td valign="top" height="30px">Previous preloader map*</td>
 <td valign="top" align="center"><kbd><center>&nbsp;page&nbsp;<br /> up</center></kbd></td>
 </tr>
 <tr>
-<td valign="top" height="30px">Next polygon</td>
+<td valign="top" height="30px">Next preloader map*</td>
 <td valign="top" align="center"><kbd>&nbsp;page&nbsp;<br /> down</kbd></td>
 </tr>
 </tbody>
 </table>
-
+*Only available if you lauched the program with more than one map.
 ## Contact & contribute
 If you want to contact me, or fix/improve Polygons, just send me a mail at **bsouchet@student.42.fr**
