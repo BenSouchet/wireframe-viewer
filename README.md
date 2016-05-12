@@ -55,6 +55,10 @@ Open all maps of a folder ⇣
 <td valign="top" align="center"><kbd>&nbsp;clear&nbsp;</kbd></td>
 </tr>
 <tr>
+<td valign="top" height="30px">Change the display color of the current map (aka change color)</td>
+<td valign="top" align="center"><kbd>&nbsp;C&nbsp;</kbd></td>
+</tr>
+<tr>
 <td valign="top" height="30px">Increase the global size of the map (aka zoom)</td>
 <td valign="top" align="center"><kbd>&nbsp;+&nbsp;</kbd></td>
 </tr>
@@ -83,7 +87,7 @@ Open all maps of a folder ⇣
 <td valign="top" align="center"><kbd>&nbsp;W&nbsp;</kbd></td>
 </tr>
 <tr>
-<td valign="top" height="30px">>Counter clockwise rotation on the X axe</td>
+<td valign="top" height="30px">Counter clockwise rotation on the X axe</td>
 <td valign="top" align="center"><kbd>&nbsp;S&nbsp;</kbd></td>
 </tr>
 <tr>
@@ -91,7 +95,7 @@ Open all maps of a folder ⇣
 <td valign="top" align="center"><kbd>&nbsp;D&nbsp;</kbd></td>
 </tr>
 <tr>
-<td valign="top" height="30px">>Counter clockwise rotation on the Y axe</td>
+<td valign="top" height="30px">Counter clockwise rotation on the Y axe</td>
 <td valign="top" align="center"><kbd>&nbsp;A&nbsp;</kbd></td>
 </tr>
 <tr>
@@ -99,7 +103,7 @@ Open all maps of a folder ⇣
 <td valign="top" align="center"><kbd>&nbsp;E&nbsp;</kbd></td>
 </tr>
 <tr>
-<td valign="top" height="30px">>Counter clockwise rotation on the Z axe</td>
+<td valign="top" height="30px">Counter clockwise rotation on the Z axe</td>
 <td valign="top" align="center"><kbd>&nbsp;Q&nbsp;</kbd></td>
 </tr>
 <tr>
