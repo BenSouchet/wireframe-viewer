@@ -6,7 +6,7 @@
 /*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/04 18:39:26 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/05/02 17:11:04 by bsouchet         ###   ########.fr       */
+/*   Updated: 2016/05/12 14:36:29 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
 # define WIN_W 1280
 # define WIN_H 720
 
-t_var	check(t_var v, int num);
+t_var	*check(t_var *v, int num);
 t_var	*check_edges(t_var *v);
 
 int		expose_hook(t_var *v);

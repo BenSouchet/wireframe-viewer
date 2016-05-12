@@ -6,7 +6,7 @@
 /*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/02 13:30:40 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/04/12 17:24:54 by bsouchet         ###   ########.fr       */
+/*   Updated: 2016/05/12 14:44:39 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,14 +87,15 @@ char			*ft_strnew(size_t size);
 char			*ft_strcat(char *s1, const char *s2);
 char			*ft_strcpy(char *dst, const char *src);
 char			*ft_strjoin(char const *s1, char const *s2);
+char			*ft_strjoin2(char *s1, char *s2, int type);
 
 int				ft_strcmp(char *s1, char *s2);
 
-int				ft_pr(t_var v, int type);
+int				ft_pr(t_var *v, int type);
 int				ft_rand(int min, int max);
 
 int				dark_color(int clr, int r, int g, int b);
 
-int				get_next_line(int const fd, char **line, t_var v);
+int				get_next_line(int const fd, char **line, t_var *v);
 
 #endif

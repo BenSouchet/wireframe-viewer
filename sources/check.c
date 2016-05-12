@@ -6,7 +6,7 @@
 /*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/11 08:44:40 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/05/02 17:15:07 by bsouchet         ###   ########.fr       */
+/*   Updated: 2016/05/12 15:13:37 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ t_var			*check_edges(t_var *v)
 	if (v->val[v->p][0] == 1 && v->val[v->p][1] == 1)
 		v->lgr = ft_strjoin("Edges : ", "Nope!");
 	else if (v->val[v->p][0] == 1 || v->val[v->p][1] == 1)
-		v->lgr = ft_strjoin("Edges : ", ft_itoa((lns - 1) * wth));
+		v->lgr = ft_strjoin2("Edges : ", ft_itoa((lns - 1) * wth), 1);
 	else
-		v->lgr = ft_strjoin("Edges : ", ft_itoa(((lns - 1) * wth) * 2));
+		v->lgr = ft_strjoin2("Edges : ", ft_itoa(((lns - 1) * wth) * 2), 1);
 	return (v);
 }
 
-static int		check_hex(char *s, int x, int *e, t_var v)
+static int		check_hex(char *s, int x, int *e, t_var *v)
 {
 	int letter;
 	int num;
@@ -49,46 +49,49 @@ static int		check_hex(char *s, int x, int *e, t_var v)
 	return (1);
 }
 
-static t_var	check_num(t_var v, int e)
+static t_var	*check_num(t_var *v, int e)
 {
-	if (v.c[v.x] == 43 || v.c[v.x] == 45)
-		while (v.x++ > -1 && v.c[v.x] != 32 && v.c[v.x] != 0 && v.c[v.x] != 44)
-			if (e == 0 && (v.c[v.x] < 48 || v.c[v.x] > 57) && ft_pr(v, 7) < 0)
+	if (v->c[v->x] == 43 || v->c[v->x] == 45)
+		while (v->x++ > -1 && v->c[v->x] != 32 && v->c[v->x] != 0
+		&& v->c[v->x] != 44)
+			if (e == 0 && (v->c[v->x] < 48 || v->c[v->x] > 57)
+			&& ft_pr(v, 7) < 0)
 				e++;
-	v.x--;
-	while (v.x++ > -5 && v.c[v.x] != 32 && v.c[v.x] != 0 && v.c[v.x] != 44)
-		if (e == 0 && (v.c[v.x] < 48 || v.c[v.x] > 57) && ft_pr(v, 4) < 0)
+	v->x--;
+	while (v->x++ > -5 && v->c[v->x] != 32 && v->c[v->x] != 0
+	&& v->c[v->x] != 44)
+		if (e == 0 && (v->c[v->x] < 48 || v->c[v->x] > 57) && ft_pr(v, 4) < 0)
 			e++;
-	if (v.c[v.x] == 44 && v.c[v.x + 1] == 48 && v.c[v.x + 2] == 120
-			&& check_hex(v.c, v.x + 2, &e, v) > 0)
-		while (v.x++ > -1 && v.c[v.x] != 32 && v.c[v.x] != 0)
+	if (v->c[v->x] == 44 && v->c[v->x + 1] == 48 && v->c[v->x + 2] == 120
+			&& check_hex(v->c, v->x + 2, &e, v) > 0)
+		while (v->x++ > -1 && v->c[v->x] != 32 && v->c[v->x] != 0)
 			;
-	else if (v.c[v.x] == 44)
+	else if (v->c[v->x] == 44)
 	{
 		if (e++ == 0)
 			ft_pr(v, 4);
-		while (v.x++ > -1 && v.c[v.x] != 32 && v.c[v.x] != 0)
+		while (v->x++ > -1 && v->c[v->x] != 32 && v->c[v->x] != 0)
 			;
 	}
 	if (e != 0)
-		v.inv = e;
+		v->inv = e;
 	return (v);
 }
 
-t_var			check(t_var v, int num)
+t_var			*check(t_var *v, int num)
 {
-	v.lns++;
-	v.x = 0;
-	while (v.c[v.x] != 0)
+	v->lns++;
+	v->x = 0;
+	while (v->c[v->x] != 0)
 	{
-		while (v.c[v.x] == 32)
-			v.x++;
-		if (v.c[v.x] != 32 && v.c[v.x] != 0 && num++ > -1)
+		while (v->c[v->x] == 32)
+			v->x++;
+		if (v->c[v->x] != 32 && v->c[v->x] != 0 && num++ > -1)
 			v = check_num(v, 0);
 	}
-	if (v.wth == -1)
-		v.wth = num;
-	else if (v.wth != -1 && num != v.wth)
-		v.wth = -2;
+	if (v->wth == -1)
+		v->wth = num;
+	else if (v->wth != -1 && num != v->wth)
+		v->wth = -2;
 	return (v);
 }

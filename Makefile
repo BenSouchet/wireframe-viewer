@@ -6,7 +6,7 @@
 #    By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/02/04 18:49:05 by bsouchet          #+#    #+#              #
-#    Updated: 2016/03/26 15:51:11 by bsouchet         ###   ########.fr        #
+#    Updated: 2016/05/12 15:17:07 by bsouchet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,9 +52,9 @@ $(DIR_O)/%.o: $(DIR_S)/%.c $(HEADERS)/$(NAME).h
 norme:
 	@make norme -C $(LIBFT)
 	@echo
-	norminette $(HEADERS)
+	norminette ./$(HEADERS)
 	@echo
-	norminette $(DIR_S)
+	norminette ./$(DIR_S)
 
 clean:
 	@rm -f $(OBJS)
