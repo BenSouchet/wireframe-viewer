@@ -6,7 +6,7 @@
 /*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/11 08:59:37 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/05/12 14:48:10 by bsouchet         ###   ########.fr       */
+/*   Updated: 2016/05/12 17:06:10 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,10 +77,10 @@ t_var	*user_interface(t_var *v, int type)
 		v->len = WIN_W - 50 - ft_strlen(v->nam) * 10;
 		v->x = 25;
 		v->y = 25;
-		mlx_draw(v, 188, 193);
+		mlx_draw(v, 188, 173);
 		v->x = 25;
-		v->y = 217;
-		mlx_draw(v, 188, 306);
+		v->y = 197;
+		mlx_draw(v, 188, 286);
 		v->y = (WIN_H - 65);
 		mlx_draw(v, 188, (WIN_H - 25));
 		v->x = v->len - 1;
@@ -93,21 +93,20 @@ void	user_interface_texts(t_var *v)
 {
 	v = check_edges(v);
 	mlx_string_put(v->mlx, v->win, 41, 35, UI_COLOR, "Controls Keys");
-	mlx_string_put(v->mlx, v->win, 37, 63, UI_COLOR, "Quit = ESC");
-	mlx_string_put(v->mlx, v->win, 37, 83, UI_COLOR, "Color = C");
-	mlx_string_put(v->mlx, v->win, 37, 103, UI_COLOR, "Move = ^ v < >");
-	mlx_string_put(v->mlx, v->win, 37, 123, UI_COLOR, "Zoom = + or -");
-	mlx_string_put(v->mlx, v->win, 37, 143, UI_COLOR, "Rot8 = W S A D");
-	mlx_string_put(v->mlx, v->win, 37, 163, UI_COLOR, "Reset = CLEAR");
-	mlx_string_put(v->mlx, v->win, 37, 228, UI_COLOR, "Files Explorer");
+	mlx_string_put(v->mlx, v->win, 37, 63, UI_COLOR, "Move = ^ v < >");
+	mlx_string_put(v->mlx, v->win, 37, 83, UI_COLOR, "Zoom = + or -");
+	mlx_string_put(v->mlx, v->win, 37, 103, UI_COLOR, "Rot8 = W S A D");
+	mlx_string_put(v->mlx, v->win, 37, 123, UI_COLOR, "Color = SHIFT");
+	mlx_string_put(v->mlx, v->win, 37, 143, UI_COLOR, "Reset = CLEAR");
+	mlx_string_put(v->mlx, v->win, 37, 208, UI_COLOR, "Files Explorer");
 	if (v->p > 0)
-		mlx_string_put(v->mlx, v->win, 37, 256, UI_COLOR, "Prev = PAGE UP");
+		mlx_string_put(v->mlx, v->win, 37, 236, UI_COLOR, "Prev = PAGE UP");
 	else
-		mlx_string_put(v->mlx, v->win, 37, 256, UI2_COLOR, "Prev = PAGE UP");
+		mlx_string_put(v->mlx, v->win, 37, 236, UI2_COLOR, "Prev = PAGE UP");
 	if (v->p < v->max)
-		mlx_string_put(v->mlx, v->win, 37, 276, UI_COLOR, "Next = PAGE DW");
+		mlx_string_put(v->mlx, v->win, 37, 256, UI_COLOR, "Next = PAGE DW");
 	else
-		mlx_string_put(v->mlx, v->win, 37, 276, UI2_COLOR, "Next = PAGE DW");
+		mlx_string_put(v->mlx, v->win, 37, 256, UI2_COLOR, "Next = PAGE DW");
 	mlx_string_put(v->mlx, v->win, 37, (WIN_H - 55), UI_COLOR, v->lgr);
 	free(v->lgr);
 	mlx_string_put(v->mlx, v->win, v->len + 11, (WIN_H - 55), UI_COLOR, v->nam);

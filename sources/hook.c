@@ -6,7 +6,7 @@
 /*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/11 08:51:06 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/05/12 15:02:54 by bsouchet         ###   ########.fr       */
+/*   Updated: 2016/05/12 17:08:57 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,6 @@ static t_var	*key_hook_rotate(t_var *v, int keycode)
 		v->rtx[v->p] += 5;
 	else if (keycode == 2)
 		v->rty[v->p] += 5;
-	else if (keycode == 8 && (v->clr[v->p] = rand_color(0, 0, 0)) > -1)
-		v->dlr[v->p] = dark_color(v->clr[v->p], 0, 0, 0);
 	else if (keycode == 12)
 		v->rtz[v->p] -= 5;
 	else if (keycode == 13)
@@ -78,6 +76,11 @@ static t_var	*key_hook_translate(t_var *v, int keycode)
 		v->mov[v->p][1] -= v->zmv[v->p];
 	else if (keycode == 125)
 		v->mov[v->p][1] += v->zmv[v->p];
+	else if (keycode == 257 || keycode == 258)
+	{
+		v->clr[v->p] = rand_color(0, 0, 0);
+		v->dlr[v->p] = dark_color(v->clr[v->p], 0, 0, 0);
+	}
 	return (v);
 }
 
@@ -93,7 +96,7 @@ int				key_hook(int keycode, t_var *v)
 	{
 		if (keycode >= 0 && keycode < 80)
 			v = key_hook_rotate(v, keycode);
-		else if (keycode > 110 && keycode < 130)
+		else if (keycode > 110 && keycode < 260)
 			v = key_hook_translate(v, keycode);
 		mlx_destroy_image(v->mlx, v->img);
 		mlx_clear_window(v->mlx, v->win);
