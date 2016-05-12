@@ -1,7 +1,7 @@
 # Fdf
 
 Fdf is a program developped for my learning course at 42 school to view topological maps in a 3D space.
-<img align="center" src="http://i.imgur.com/y2sxbI0.png" width="100%" />
+<img align="center" src="http://i.imgur.com/9OtbP21.png" width="100%" />
 Several options are available (see [Keyboard shortcuts](https://github.com/Raiden-kazua/Fdf#keyboard-shortcuts) section for more infos) :
 * Zoom and unzoom
 * Move the map on the 3D space
