@@ -17,7 +17,8 @@ git clone https://github.com/Raiden-kazua/Fdf ~/Fdf
 cd ~/Fdf && ./fdf
 ```
 You have to launch the program with parameter(s). It's map(s) you would like to open at the execution of the program. Parameter(s) as to be the name(s) of valid filename(s).<br />
-Exemples :
+Some Examples :
+Open only one map ⤵
 ```bash
 ./polygons maps/good/pyramide.fdf
 ```
