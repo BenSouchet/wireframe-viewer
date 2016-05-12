@@ -79,28 +79,28 @@ Open all maps of a folder ⇣
 <td valign="top" align="center"><kbd>&nbsp;►&nbsp;</kbd></td>
 </tr>
 <tr>
-<td valign="top" height="30px">Increase the position of all odd points of the polygon</td>
+<td valign="top" height="30px">Clockwise rotation on the X axe</td>
 <td valign="top" align="center"><kbd>&nbsp;W&nbsp;</kbd></td>
 </tr>
 <tr>
-<td valign="top" height="30px">Decrease the position of all odd points of the polygon</td>
-<td valign="top" align="center"><kbd>&nbsp;Q&nbsp;</kbd></td>
-</tr>
-<tr>
-<td valign="top" height="30px">Increase the position of all even points of the polygon</td>
+<td valign="top" height="30px">>Counter clockwise rotation on the X axe</td>
 <td valign="top" align="center"><kbd>&nbsp;S&nbsp;</kbd></td>
 </tr>
 <tr>
-<td valign="top" height="30px">Decrease the position of all even points of the polygon</td>
+<td valign="top" height="30px">Clockwise rotation on the Y axe</td>
+<td valign="top" align="center"><kbd>&nbsp;D&nbsp;</kbd></td>
+</tr>
+<tr>
+<td valign="top" height="30px">>Counter clockwise rotation on the Y axe</td>
 <td valign="top" align="center"><kbd>&nbsp;A&nbsp;</kbd></td>
 </tr>
 <tr>
-<td valign="top" height="30px">Clockwise rotation of the polygon</td>
-<td valign="top" align="center"><kbd>&nbsp;X&nbsp;</kbd></td>
+<td valign="top" height="30px">Clockwise rotation on the Z axe</td>
+<td valign="top" align="center"><kbd>&nbsp;E&nbsp;</kbd></td>
 </tr>
 <tr>
-<td valign="top" height="30px">Counter clockwise rotation of the polygon</td>
-<td valign="top" align="center"><kbd>&nbsp;Z&nbsp;</kbd></td>
+<td valign="top" height="30px">>Counter clockwise rotation on the Z axe</td>
+<td valign="top" align="center"><kbd>&nbsp;Q&nbsp;</kbd></td>
 </tr>
 <tr>
 <td valign="top" height="30px">Previous preloader map*</td>
