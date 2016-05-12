@@ -56,7 +56,7 @@ Open all maps of a folder ⇣
 </tr>
 <tr>
 <td valign="top" height="30px">Change the display color of the current map (aka change color)</td>
-<td valign="top" align="center"><kbd>&nbsp;C&nbsp;</kbd></td>
+<td valign="top" align="center"><kbd>&nbsp;shift&nbsp;</kbd></td>
 </tr>
 <tr>
 <td valign="top" height="30px">Increase the global size of the map (aka zoom)</td>
