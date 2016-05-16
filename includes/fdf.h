@@ -6,7 +6,7 @@
 /*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/04 18:39:26 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/05/12 14:36:29 by bsouchet         ###   ########.fr       */
+/*   Updated: 2016/05/16 13:59:26 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include "../libft/include/libft.h"
 # include "../libmlx/includes/mlx.h"
 
+# define GNL get_next_line
 # define PI 3.14159265359
 # define BG_COLOR 0x353535
 # define BG2_COLOR 0x2D2D2D

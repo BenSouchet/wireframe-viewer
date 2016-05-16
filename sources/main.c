@@ -6,7 +6,7 @@
 /*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/04 18:21:25 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/05/12 15:18:31 by bsouchet         ###   ########.fr       */
+/*   Updated: 2016/05/16 14:00:33 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,20 +85,20 @@ static void		execute(t_var *v, int fd)
 		v->s = (char *)malloc(sizeof(char) * 2);
 		if ((fd = open(v->fls[v->max], O_RDONLY)) == -1)
 			ft_pr(v, 3);
-		while (get_next_line(fd, &v->c, v) > 0 && (v = check(v, 0))->lns > -1)
+		while (fd != -1 && GNL(fd, &v->c, v) > 0 && (v = check(v, 0))->lns > -1)
 			v->s = ft_strjoin2(ft_strjoin2(v->s, " ", 0), v->c, 2);
-		if (v->wth == -2)
+		if (fd != -1 && v->wth == -2)
 			ft_pr(v, 8);
-		else if (v->wth == 0)
+		else if (fd != -1 && v->wth == 0)
 			ft_pr(v, 5);
-		else if (v->inv == 0 && ++v->p > -5)
+		else if (fd != -1 && v->inv == 0 && ++v->p > -5)
 			assign(v);
-		if (close(fd) == -1)
+		if (fd != -1 && close(fd) == -1)
 			ft_pr(v, 3);
 		free(v->c);
 		free(v->s);
 	}
-	if (v->p != -1)
+	if (fd != -1 && v->p != -1)
 		init_win(v);
 }
 
