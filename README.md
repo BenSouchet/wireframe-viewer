@@ -146,4 +146,4 @@ error: maps/bad/14.fdf (line 2 col 38)    --> Invalid Hexadecimal color code
 error: maps/bad/15.fdf (line 4 col 3)     --> Invalid character
 ```
 ## Contact & contribute
-If you want to contact me, or fix/improve Polygons, just send me a mail at **bsouchet@student.42.fr**
+If you want to contact me, or fix/improve FdF, just send me a mail at **bsouchet@student.42.fr**
