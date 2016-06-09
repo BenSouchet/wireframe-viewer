@@ -6,7 +6,7 @@
 /*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/04 18:21:25 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/05/16 14:00:33 by bsouchet         ###   ########.fr       */
+/*   Updated: 2016/06/09 17:40:32 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,7 @@ static void		init_win(t_var *v)
 	v->max = v->p;
 	v->p = 0;
 	v->mlx = mlx_init();
-	v->img = mlx_new_image(v->mlx, WIN_W, WIN_H);
 	v->win = mlx_new_window(v->mlx, -1, -1, WIN_W, WIN_H, "fdf - bsouchet");
-	v->d = mlx_get_data_addr(v->img, &v->bpp, &v->sl, &v->end);
 	mlx_expose_hook(v->win, expose_hook, v);
 	mlx_hook(v->win, 17, 0, close_hook, v);
 	mlx_hook(v->win, 2, 0, key_hook, v);
