@@ -1,8 +1,8 @@
 # Fdf
 
-Fdf is a program developped for my learning course at 42 school to view topological maps in a 3D space.
+Fdf is a program developed for my learning course at 42 school to view topological maps in a 3D space.
 <img align="center" src="http://i.imgur.com/B9Ugscn.png" width="100%" />
-Several options are available (see [Keyboard shortcuts](https://github.com/Raiden-kazua/Fdf#keyboard-shortcuts) section for more infos) :
+Several options are available (see [Keyboard shortcuts](https://github.com/BenjaminSouchet/Fdf#keyboard-shortcuts) section for more infos) :
 * Zoom and unzoom
 * Move the map on the 3D space
 * Rotate the map (on the three axes of rotation)
@@ -13,8 +13,8 @@ Infos : In the "maps" folder you will find examples maps with which you can laun
 
 ## Install & launch
 ```bash
-git clone https://github.com/Raiden-kazua/Fdf ~/Fdf
-cd ~/Fdf && ./fdf
+git clone https://github.com/BenjaminSouchet/Fdf ~/Fdf
+cd ~/Fdf && ./fdf maps/good/mars.fdf
 ```
 You have to launch the program with parameter(s). It's map(s) you would like to open at the execution of the program. Parameter(s) as to be the name(s) of valid filename(s).<br />
 
@@ -116,7 +116,7 @@ Open all maps of a folder ⇣
 </tr>
 </tbody>
 </table>
-*Only available if you lauched the program with more than one map.
+*Only available if you lauched the program with more than one map.*
 ## Bad maps & errors
 
 This program have a very complexe errors checker, so if you launch Fdf with bad maps you will see the type, the line and the column position of all errors of the bad map.
