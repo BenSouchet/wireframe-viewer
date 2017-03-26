@@ -117,6 +117,7 @@ Open all maps of a folder ⇣
 </tbody>
 </table>
 *Only available if you lauched the program with more than one map.*
+
 ## Bad maps & errors
 
 This program have a very complexe errors checker, so if you launch Fdf with bad maps you will see the type, the line and the column position of all errors of the bad map.
