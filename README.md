@@ -1,6 +1,6 @@
-# Fdf
+# fdf a.k.a wireframe
 
-Fdf is a program developed for my learning course at 42 school to view topological maps in a 3D space.
+fdf is a program developed for my learning course at 42 school to view topological maps in a 3D space.
 <img align="center" src="http://i.imgur.com/B9Ugscn.png" width="100%" />
 Several options are available (see [Keyboard shortcuts](https://github.com/BenjaminSouchet/Fdf#keyboard-shortcuts) section for more infos) :
 * Zoom and unzoom
